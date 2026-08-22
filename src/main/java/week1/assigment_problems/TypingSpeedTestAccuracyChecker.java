@@ -2,27 +2,45 @@ package week1.assigment_problems;
 
 public class TypingSpeedTestAccuracyChecker {
 
-    public static void compareTypedText(String original, String typed) {
+    public static void checkTypingAccuracy(String original, String typed) {
 
-        int errors = 0;
-        int length = Math.min(original.length(), typed.length());
+        int matched = 0;
+        int firstMismatch = -1;
 
-        for (int i = 0; i < length; i++) {
-            if (original.charAt(i) != typed.charAt(i)) {
-                errors++;
+        for (int i = 0; i < original.length(); i++) {
+
+            if (original.charAt(i) == typed.charAt(i)) {
+                matched++;
+            } else if (firstMismatch == -1) {
+                firstMismatch = i;
             }
         }
 
-        errors += Math.abs(original.length() - typed.length());
+        double accuracy = (matched * 100.0) / original.length();
 
-        System.out.println("Total Typing Errors: " + errors);
+        if (firstMismatch == -1) {
+            System.out.printf(
+                "Matched: %d/%d | Accuracy: %.2f%% | No Mismatches%n",
+                matched, original.length(), accuracy
+            );
+        } else {
+            System.out.printf(
+                "Matched: %d/%d | Accuracy: %.2f%% | First Mismatch at position %d ('%c' vs '%c')%n",
+                matched,
+                original.length(),
+                accuracy,
+                firstMismatch + 1,
+                original.charAt(firstMismatch),
+                typed.charAt(firstMismatch)
+            );
+        }
     }
 
     public static void main(String[] args) {
 
-        String original = "JAVA";
-        String typed = "JXVA";
+        String original = "hello world";
+        String typed = "hello worlt";
 
-        compareTypedText(original, typed);
+        checkTypingAccuracy(original, typed);
     }
 }
