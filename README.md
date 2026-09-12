@@ -1,17 +1,15 @@
-# Step_semester_3
-
-## Date: 22-08-2026
+## Date: 12-09-2026
 
 **Today's Work:**
-- Completed Week 1 assignment with 5 Java problems.
-- Created feature/session_1 branch from develop.
-- Implemented and tested all 5 assignment problems.
-- Pushed all completed work to GitHub.
+- Completed Week 4 Category C assignments.
+- Solved Product of Array Except Self using prefix and suffix products.
+- Solved Maximum Subarray using Kadane's algorithm.
+- Solved 3Sum using sorting and two-pointer technique.
+- Solved Subarray Sum Equals K using prefix sums and HashMap.
+- Solved Find Minimum in Rotated Sorted Array using binary search.
 
 **Next Session Plan:**
-- Continue with the next session's Java problems.
+- Continue with the next assigned problems and practice the concepts learned.
 
 **Issues Faced:**
-- Initially committed a compiled .class file; removed it and added .gitignore to prevent compiled files from being tracked.
-
----
+- No major issues faced.
